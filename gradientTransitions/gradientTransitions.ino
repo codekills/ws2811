@@ -5,7 +5,7 @@
 #define NUM_LEDS 150
 #define LED_PIN 2
 
-#define BRIGHTNESS 50
+#define BRIGHTNESS 10
 #define TRANSITION_DELAY 500
 
 CRGB leds[NUM_LEDS];
@@ -63,8 +63,7 @@ DEFINE_GRADIENT_PALETTE(Helix){
     255, 186, 193, 210}; // greyish white
 
 // CRGBPalette16 colorPalette = ForestColors_p;
-// CRGBPalette16 colorPalette = CloudColors_p;
-CRGBPalette16 colorPalette = ForestColors_p;
+CRGBPalette16 colorPalette = CloudColors_p;
 
 void setup()
 {
