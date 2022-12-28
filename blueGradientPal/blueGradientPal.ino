@@ -18,7 +18,7 @@ DEFINE_GRADIENT_PALETTE(BlurpHaze){
     179, 95, 76, 142,
     255, 130, 149, 193};
 
-// Blue and purps
+// Blue nd purps
 DEFINE_GRADIENT_PALETTE(Codi){
     0, 10, 189, 198,  // light blue
     46, 113, 28, 145, // dark purp
