@@ -4,8 +4,11 @@
 		{
 			"label": "Compile and upload arduino sketch",
 			"type": "shell",
-			"command": "arduino-cli compile -b arduino:avr:mega --port /dev/ttyACM0  ../${relativeFile} && arduino-cli upload -b arduino:avr:mega --port /dev/ttyACM0 ../${relativeFile}",
-			"group": "test",
+			"command": "arduino-cli compile -b arduino:avr:mega --port /dev/ttyACM0  ${relativeFileDirname} && arduino-cli upload -b arduino:avr:mega --port /dev/ttyACM0 ${relativeFileDirname}",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
@@ -13,7 +16,8 @@
 				"panel": "shared",
 				"showReuseMessage": false,
 				"clear": true
-			}
+			},
+			"problemMatcher": []
 		}
 	]
 }
