@@ -2,10 +2,10 @@
 
 #define COLOR_ORDER RGB
 #define CHIPSET WS2811
-#define NUM_LEDS 150
+#define NUM_LEDS 350
 #define LED_PIN 2
 
-#define BRIGHTNESS 30
+#define BRIGHTNESS 180
 
 CRGB leds[NUM_LEDS];
 uint8_t colorIndex[NUM_LEDS];
@@ -16,7 +16,7 @@ DEFINE_GRADIENT_PALETTE(greenblue_gp){
     179, 12, 250, 0,
     255, 0, 255, 245};
 
-CRGBPalette16 greenblue = greenblue_gp;
+CRGBPalette16 greenblue = OceanColors_p;
 
 void setup()
 {
@@ -34,7 +34,7 @@ void loop()
 {
 
   // Creat a sin wave with period of 2 seconds (30bpm) to change the brightness of the strip
-  uint8_t sinBeat = beatsin8(30, 50, 255, 0, 0);
+  uint8_t sinBeat = beatsin8(30, 150, 255, 0, 0);
 
   // Color each pixel from the palette using the index from colorIndex[]
   for (int i = 0; i < NUM_LEDS; i++)
@@ -42,7 +42,7 @@ void loop()
     leds[i] = ColorFromPalette(greenblue, colorIndex[i], sinBeat);
   }
 
-  EVERY_N_MILLISECONDS(15)
+  EVERY_N_MILLISECONDS(360)
   {
     for (int i = 0; i < NUM_LEDS; i++)
     {
